@@ -14,4 +14,4 @@ export default function App() {
     </div>
   );
 }
-// 6 72
+// 6 72, 6 18
