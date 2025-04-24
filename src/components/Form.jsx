@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Form() {
+  const [description, setDescription] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -13,7 +17,12 @@ export default function Form() {
           </option>
         ))}
       </select>
-      <input type="text" placeholder="Item..." />
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button>Add</button>
     </form>
   );
