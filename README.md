@@ -1,12 +1,44 @@
-# React + Vite
+Controlled elements in React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Array.from({ length: 5 }, (_, i) => i); -->
+ <!-- //[0, 1, 2, 3, 4] -->
 
-Currently, two official plugins are available:
+1. <select> – це випадаючий список:
+   value={quantity} – прив'язка значення. Це означає, що елемент керований (controlled component): його значення зберігається у стані quantity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+onChange={(e) => setQuantity(Number(e.target.value))} – при зміні вибору користувачем, викликається функція setQuantity, яка оновлює стан. Значення перетворюється у число, оскільки e.target.value – це рядок.
 
-## Expanding the ESLint configuration
+jsx
+Copy
+Edit
+{Array.from({ length: 20 }, (\_, i) => i + 1).map((num) => (
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  <option value={num} key={num}>
+    {num}
+  </option>
+))}
+🔹 2. Array.from({ length: 20 }, (_, i) => i + 1)
+Створюється масив із 20 елементів.
+
+\_ – перший аргумент (елемент), ігнорується.
+
+i – індекс елемента.
+
+i + 1 – ми починаємо не з 0, а з 1, тому отримаємо масив [1, 2, 3, ..., 20].
+
+📌 Це зручно для створення числового діапазону.
+
+🔹 3. .map((num) => ...)
+Проходимося по кожному числу у цьому масиві й створюємо <option> для кожного.
+
+<option value={num} key={num}>
+  {num}
+</option>
+value={num} – значення, яке буде відправлено при виборі.
+
+key={num} – унікальний ключ для React (вимагається в списках).
+
+{num} – текст, який бачить користувач у випадаючому списку.
+
+✅ В результаті:
+Ти отримуєш <select>, який дозволяє вибрати число від 1 до 20, і це значення зберігається в стані quantity.
