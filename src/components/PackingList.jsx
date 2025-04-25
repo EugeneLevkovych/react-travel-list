@@ -1,4 +1,4 @@
-import Item from "./item";
+import Item from "./Item";
 
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },

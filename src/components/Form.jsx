@@ -1,4 +1,6 @@
 import { useState } from "react";
+const LENGTH = 20;
+const OPTIONS = Array.from({ length: LENGTH }, (_, i) => i + 1);
 
 export default function Form() {
   const [description, setDescription] = useState("");
@@ -23,7 +25,7 @@ export default function Form() {
         value={quantity}
         onChange={(e) => setQuantity(Number(e.target.value))}
       >
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+        {OPTIONS.map((num) => (
           <option value={num} key={num}>
             {num}
           </option>
