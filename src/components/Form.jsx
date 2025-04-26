@@ -2,7 +2,7 @@ import { useState } from "react";
 const LENGTH = 20;
 const OPTIONS = Array.from({ length: LENGTH }, (_, i) => i + 1);
 
-export default function Form() {
+export default function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("1");
 
@@ -13,6 +13,8 @@ export default function Form() {
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
     console.log(newItem);
+
+    onAddItems(newItem);
 
     setDescription("");
     setQuantity(1);

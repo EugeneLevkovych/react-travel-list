@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Item from "./item";
 
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },
@@ -6,11 +6,11 @@ const initialItems = [
   { id: 3, description: "Charger", quantity: 1, packed: false },
 ];
 
-export default function PackingList() {
+export default function PackingList({ items }) {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((i) => (
+        {items.map((i) => (
           <Item key={i.id} ite={i} />
         ))}
       </ul>
