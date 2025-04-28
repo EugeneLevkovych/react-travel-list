@@ -28,8 +28,8 @@ export default function App() {
       <Logo />
       <Form onAddItems={handleAddItems} />
       <PackingList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} />
-      <Stats />
+      <Stats items={items}/>
     </div>
   );
 }
-
+//next 7 86 mac-mini
