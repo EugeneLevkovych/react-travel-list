@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Item from "./item";
 
 export default function PackingList({ items, onDeleteItem }) {
   return (
@@ -11,3 +11,4 @@ export default function PackingList({ items, onDeleteItem }) {
     </div>
   );
 }
+//test
